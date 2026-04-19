@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Intelligent Greenhouse Network</title>
+
+<style>
+
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('your-image.jpeg') center/cover no-repeat;
+    color: white;
+}
+
+/* NAVBAR */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    backdrop-filter: blur(10px);
+}
+
+nav a {
+    margin-left: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: lightgreen;
+}
+
+/* SECTIONS */
+.page {
+    display: none;
+    text-align: center;
+    padding: 80px 20px;
+    animation: fade 0.6s;
+}
+
+.active {
+    display: block;
+}
+
+@keyframes fade {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* BUTTONS */
+.plants button {
+    padding: 15px 30px;
+    margin: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #28a745, #6ddf6d);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.plants button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px lightgreen;
+}
+
+/* CARD STYLE */
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: auto;
+    backdrop-filter: blur(10px);
+}
+
+/* BACK BUTTON */
+.back {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    background: darkgreen;
+    color: white;
+    cursor: pointer;
+}
+
+/* POPUP */
+#welcome {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(45deg, green, lightgreen);
+    padding: 15px 30px;
+    border-radius: 12px;
+    display: none;
+    animation: fade 1s;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="welcome">Welcome to our Intelligent Greenhouse Network 🌱</div>
+
+<header>
+    <h2>Intelligent Greenhouse Network</h2>
+    <nav>
+        <a onclick="showPage('home')">Home</a>
+        <a onclick="showPage('about')">About Us</a>
+        <a onclick="showPage('contact')">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page active">
+    <h1>Choose Your Plant 🌿</h1>
+    <div class="plants">
+        <button onclick="showPage('strawberry')">Strawberry 🍓</button>
+        <button onclick="showPage('lettuce')">Lettuce 🥬</button>
+        <button onclick="showPage('spinach')">Spinach 🌱</button>
+    </div>
+</div>
+
+<!-- STRAWBERRY -->
+<div id="strawberry" class="page">
+    <div class="card">
+        <h2>Strawberry 🍓</h2>
+        <p>
+            Strawberries need moderate temperature and regular watering.
+            In our intelligent greenhouse, sensors control humidity and water level
+            to ensure optimal growth and high productivity.
+        </p>
+        <button class="back" onclick="showPage('home')">Back</button>
+    </div>
+</div>
+
+<!-- LETTUCE -->
+<div id="lettuce" class="page">
+    <div class="card">
+        <h2>Lettuce 🥬</h2>
+        <p>
+            Lettuce grows best in cool environments with consistent moisture.
+            Our system monitors temperature and water supply automatically
+            to maintain ideal growing conditions.
+        </p>
+        <button class="back" onclick="showPage('home')">Back</button>
+    </div>
+</div>
+
+<!-- SPINACH -->
+<div id="spinach" class="page">
+    <div class="card">
+        <h2>Spinach 🌱</h2>
+        <p>
+            Spinach requires nutrient-rich water and proper lighting.
+            Using our smart greenhouse, we optimize nutrients and lighting
+            for faster and healthier plant growth.
+        </p>
+        <button class="back" onclick="showPage('home')">Back</button>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="page">
+    <div class="card">
+        <h2>About Our Project</h2>
+        <p>
+            The Intelligent Greenhouse Network is designed to solve the problem of inefficient agriculture.
+            By using sensors and automation, we control water, humidity, and temperature.
+            This reduces waste, increases productivity, and ensures sustainable farming.
+        </p>
+    </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="page">
+    <div class="card">
+        <h2>Contact</h2>
+        <p>Name: Hidaia</p>
+        📧 <span>Email:</span>
+                <a href="mailto:Hidaia.1924546@stemgharbiya.moe.edu.eg 
+">Hidaia.1924546@stemgharbiya.moe.edu.eg 
+</a>
+    </div>
+</div>
+
+<script>
+
+/* PAGE NAVIGATION */
+function showPage(pageId) {
+    let pages = document.querySelectorAll(".page");
+    pages.forEach(p => p.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+
+/* WELCOME MESSAGE */
+window.onload = () => {
+    let msg = document.getElementById("welcome");
+    msg.style.display = "block";
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 3000);
+};
+
+</script>
+
+</body>
+</html>
